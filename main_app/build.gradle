@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion compile_sdk_version.toInteger()
+
+    defaultConfig {
+        applicationId "com.morestronger.componentdemo"
+        minSdkVersion min_sdk_version.toInteger()
+        targetSdkVersion target_sdk_version.toInteger()
+        versionCode version_code.toInteger()
+        versionName version_name.toString()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:${androidx_appcompat_version}"
+    implementation "androidx.constraintlayout:constraintlayout:${androidx_constraintlayout_version}"
+
+    implementation project(path: ':middleware')
+    if(!component_login_alone_run.toBoolean()){
+        implementation project(path: ':component_login')
+    }
+    if(!component_mine_alone_run.toBoolean()){
+        implementation project(path: ':component_mine')
+    }
+}

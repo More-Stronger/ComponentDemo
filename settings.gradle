@@ -1,0 +1,1 @@
+include ':main_app', ':component_login', ':component_mine', ':middleware'
