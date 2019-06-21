@@ -1,10 +1,10 @@
 # ComponentDemo
-一个组件化项目Demo.
+  一个组件化项目Demo.
 
-## 依赖关系 UML 图.
+## 依赖关系 UML 图
  ![depend_uml.bmp](https://github.com/More-Stronger/ComponentDemo/blob/master/depend_uml.bmp)
 
-## 实现组件化基本步骤.
+## 实现组件化基本步骤
 
 #### 步骤1.在项目 gradle.properties 文件中添加变量.
    
